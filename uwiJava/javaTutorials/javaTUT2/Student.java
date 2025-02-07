@@ -31,7 +31,7 @@ public class Student {
     // Create the method countCreditsForLevel(int level) 
     // that returns the number of credits earned by a student at
     // a certain level
-    public countCreditsForLevel(int level) {
+    public int countCreditsForLevel(int level) {
         int creds = 0;
 
         for (Course course: courses) { // --> for each course in courses...

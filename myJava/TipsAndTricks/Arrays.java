@@ -1,3 +1,4 @@
+package TipsAndTricks;
 
 import java.util.Arrays;
 public class Arrays {

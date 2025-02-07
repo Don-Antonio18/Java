@@ -1,3 +1,4 @@
+package TipsAndTricks;
 public class Cat {
     // Write variables for object here
     String owner;

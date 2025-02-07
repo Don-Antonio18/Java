@@ -1,3 +1,4 @@
+package TipsAndTricks;
 public enum FavBooks {
 
     // OBJECTS CAN HAVE VALUES ASSOCIATED WITH THEN

@@ -1,3 +1,4 @@
+package BankProject;
 public class BankAccount {
     
     //* INITIALIZE VARIABLES AS PRIVATE */

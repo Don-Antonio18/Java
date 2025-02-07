@@ -1,7 +1,6 @@
 package TipsAndTricks;
 
-import java.util.Arrays;
-public class Arrays {
+public class ArrayTutorial {
     public static void main(String[] args) {
         int[] numList = { 1, 2, 3, 4, 5 };
         // for (int i = 0; i < numList.length; i++)
@@ -11,4 +10,5 @@ public class Arrays {
             System.out.print(item + " ");
             }
         
+}
 }

@@ -10,7 +10,7 @@ public class School {
         this.name = name;
         gradReqs = new ArrayList<Integer>();
         for (int req : reqs)
-            gradReqs.add(new Integer(req));
+            gradReqs.add(Integer.valueOf(req));
     }
 
     public String getName() {

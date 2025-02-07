@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Student {
     private String name;
+    @SuppressWarnings("unused")
     private School school; // add School object attribute to student
     private ArrayList<Course> courses; // add arrayList of courses
     

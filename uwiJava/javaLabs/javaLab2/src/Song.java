@@ -1,4 +1,4 @@
-public class Song {
+class Song {
 
     private String title, genre;
     Singer singer;
@@ -16,7 +16,15 @@ public class Song {
     
         
     public int getEstEarnings() {
-        return  0;//Q2. Perform this calculation
+        //! QUESTION 2 --> EVALUATE THE ESTIMATED EARNINGS OF A SONG
+
+        int titleLength =  getTitle().length();
+        int songPartEst = singer.getMinistry().getSongPartEst();
+        int estEarnings = titleLength * songPartEst;
+
+
+
+        return  0;
     }
     
     public int getClaimableEarnings() {
@@ -31,14 +39,26 @@ public class Song {
         return title;
     }
     
+
   
-    
-    /* 	Q4A. you will implement setStudio somewhere around here */
+    //! QUESTION 4A  --> IMPLEMENT THE SETSTUDIO METHOD
+    // ACCEPT A STUDIO & SET ASSOCIATED STUDIO ON SONG TO THE REFERENCED STUDIO
  
-        
-    public Studio getStudio(){
+    public Studio getStudio(Studio studio){
+        this.studio = studio;
        return studio;
     }
+
+    public Studio getStudio(){
+        return studio;
+    }
+
+    //! HELPER METHOD FOR QUESTION 4B
+    public void setStudio(Studio studio){
+        this.studio = studio;
+    }   
+
+
     private boolean isBestSeller() {
          return getEstEarnings()>singer.getMinistry().getBestSellLimit();
     }

@@ -18,13 +18,11 @@ class Song {
     public int getEstEarnings() {
         //! QUESTION 2 --> EVALUATE THE ESTIMATED EARNINGS OF A SONG
 
-        int titleLength =  getTitle().length();
+        int titleLength =  title.length();
         int songPartEst = singer.getMinistry().getSongPartEst();
         int estEarnings = titleLength * songPartEst;
 
-
-
-        return  0;
+        return  estEarnings;
     }
     
     public int getClaimableEarnings() {
@@ -44,20 +42,20 @@ class Song {
     //! QUESTION 4A  --> IMPLEMENT THE SETSTUDIO METHOD
     // ACCEPT A STUDIO & SET ASSOCIATED STUDIO ON SONG TO THE REFERENCED STUDIO
  
+    
+    //! HELPER METHOD FOR QUESTION 4B
+    public void setStudio(Studio studio){
+        this.studio = studio;
+    }   
+    
     public Studio getStudio(Studio studio){
         this.studio = studio;
        return studio;
     }
 
-    public Studio getStudio(){
-        return studio;
-    }
-
-    //! HELPER METHOD FOR QUESTION 4B
-    public void setStudio(Studio studio){
-        this.studio = studio;
-    }   
-
+    // public Studio getStudio(){
+    //     return studio;
+    // }
 
     private boolean isBestSeller() {
          return getEstEarnings()>singer.getMinistry().getBestSellLimit();

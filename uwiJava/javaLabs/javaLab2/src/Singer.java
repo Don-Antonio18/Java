@@ -35,9 +35,14 @@ class Singer {
         this.genre = genre;
         this.budget = budget;
         this.favStudio= ministry.getStudio(fav);
+        this.ministry = ministry;
         this.willApply = willApply;
-        //grantMessage ="";
-       
+
+        songs = new ArrayList<Song>();
+        this.registeredSongs= new ArrayList<Song>();
+        grantMessage = " ";
+        grantValue = 0;
+        
     }
 
 
@@ -77,7 +82,7 @@ class Singer {
     public int sumEstValue() {
         int sum = 0;
         //! QUESTION 3 --> EVALUATE THE TOTAL EARNABLE VALUE OF ALL SONGS
-        for (Song song:registeredSongs)
+        for (Song song : songs)
             sum += song.getEstEarnings();
         return sum;
     }
@@ -107,40 +112,26 @@ class Singer {
          
         System.out.println(str);
         //////////IN THIS METHOD, DO NOT MODIFY ABOVE THIS LINE /////////////////////
-             //! QUESTION 4B & 5
 
-         if (selectedStudio!=null && selectedStudio.isAvailable() && canAfford(selectedStudio)){
-        // Add code here to compelete Q4B so that if the selected studio is available,    
+              // Add code here to compelete Q4B so that if the selected studio is available,    
         // the studio on the song is set to the selectedstudio
+
+        if (favStudio != null && favStudio.isAvailable() && canAfford(favStudio)) {
+        selectedStudio = favStudio;
+        } else if (ministry != null) {
+                selectedStudio = ministry.getBestAvailStudio(budget, favStudio);
+            }           
+        
+
+        if (selectedStudio !=null && selectedStudio.isAvailable() && canAfford(selectedStudio)){
             song.setStudio(selectedStudio);
-        }
-          
-            //! QUESTION 6  
-         if (!(song.hasStudio())){
-             //Code to get the best studio from the ministry and 
-             //assign it on song if not null and the singer can afford
-             Studio bestStudio = ministry.getBestAvailStudio(budget, selectedStudio);
-                if (bestStudio != null && canAfford(bestStudio)) {
-                    song.setStudio(bestStudio);
-                }
-                else {
-                    System.out.println("No Studio available");
-                }
-
-            }
-              
-          
-        
-        
-     //! QUESTION 7 --> CALL STUDIO REVERSE METHOD TO ENSURE RECORD OF SONG AFTER REGISTRATION
-
-       if (song.hasStudio()){
+            selectedStudio.reserve(); 
             registeredSongs.add(song);
-            budget -= song.getStudio().getCost();
-            //code to reserve the studio's time could go here
-            song.getStudio().reserve();
-       }
-            
+            budget -= selectedStudio.getCost();
+
+        }
+        
+  
     }
     
 

@@ -1,4 +1,4 @@
-package TipsAndTricks;
+package TipsAndTricks.src;
 import java.util.Scanner;
 
 public class Life {

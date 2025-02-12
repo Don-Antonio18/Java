@@ -1,3 +1,4 @@
+package Java.uwiJava.javaLabs.javaLab2.src;
 class Song {
 
     private String title, genre;

@@ -1,4 +1,4 @@
-package TipsAndTricks;
+package TipsAndTricks.src;
 
 public class ArrayTutorial {
     public static void main(String[] args) {

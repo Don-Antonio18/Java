@@ -1,4 +1,4 @@
-package TipsAndTricks;
+package TipsAndTricks.src;
 public enum FavBooks {
 
     // OBJECTS CAN HAVE VALUES ASSOCIATED WITH THEN
@@ -19,13 +19,14 @@ public enum FavBooks {
         this.datePublished = datePublished;
         
     }
-}
 
-/* 
-    //! Print out Book Details:
-    System.out.println(
-        "Name of Book: " + FavBooks.DiaryOfAWimpyKid
-        + "\nFirst Published on: " + FavBooks.DiaryOfAWimpyKid.datePublished
-        + "\nRanking: " + FavBooks.DiaryOfAWimpyKid.ranking
-    );
-*/
+
+ 
+    // //! Print out Book Details:
+    // System.out.println(
+    //     "Name of Book: " + FavBooks.DiaryOfAWimpyKid
+    //     + "\nFirst Published on: " + FavBooks.DiaryOfAWimpyKid.datePublished
+    //     + "\nRanking: " + FavBooks.DiaryOfAWimpyKid.ranking
+    // );
+
+}

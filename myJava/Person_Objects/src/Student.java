@@ -1,4 +1,4 @@
-package TipsAndTricks.Person_Objects.src;
+package Person_Objects.src;
 
 
 public class Student {

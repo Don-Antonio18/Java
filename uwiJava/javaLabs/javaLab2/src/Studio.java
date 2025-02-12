@@ -1,3 +1,5 @@
+package Java.uwiJava.javaLabs.javaLab2.src;
+
 class Studio {
 
     private String name;

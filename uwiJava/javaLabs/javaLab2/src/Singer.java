@@ -1,3 +1,5 @@
+package Java.uwiJava.javaLabs.javaLab2.src;
+
 import java.util.ArrayList;
 
 class Singer {

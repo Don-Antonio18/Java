@@ -1,3 +1,5 @@
+package Java.uwiJava.javaLabs.javaLab1;
+
 public class Assignment {
     private String assignmentName;
     private int effort;

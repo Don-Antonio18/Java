@@ -1,4 +1,4 @@
-package TipsAndTricks;
+package TipsAndTricks.src;
 public class Cat {
     // Write variables for object here
     String owner;

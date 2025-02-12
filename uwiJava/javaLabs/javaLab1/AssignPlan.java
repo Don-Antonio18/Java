@@ -1,3 +1,5 @@
+package Java.uwiJava.javaLabs.javaLab1;
+
 import java.text.DecimalFormat;
 
 //Implement the AssignPlan class here

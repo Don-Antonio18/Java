@@ -1,6 +1,8 @@
-package TipsAndTricks;
+package TipsAndTricks.src;
 // This is a simple Java program.
 // FileName : "HelloWorld.java".
+
+import TipsAndTricks.OtherClass;
 
 public class stringMethods {
     // Your program begins with a call to main().

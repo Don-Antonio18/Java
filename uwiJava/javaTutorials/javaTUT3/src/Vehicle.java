@@ -18,7 +18,7 @@ public class Vehicle {
     }
 
     public double serviceCharge() {
-        return estimatedValue * 0.01; // 1% of estimated value
+        return estimatedValue * (float) 0.01; // 1% of estimated value
     }
 
     public static int getVehicleCount() {

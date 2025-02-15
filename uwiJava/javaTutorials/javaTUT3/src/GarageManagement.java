@@ -26,6 +26,16 @@ public class GarageManagement {
             }
         }
 
+        for (int i=0; i < garage.length; i++) {
+            if (garage[i] instanceof Car) {
+                System.out.println(garage[i].serviceCharge(5000));
+            }
+            else{
+                System.out.println(garage[i].serviceCharge());
+            }
+
+        }
+
         // Print total number of vehicles
         System.out.println("\nTotal number of vehicles in garage: " + Vehicle.getVehicleCount());
     }

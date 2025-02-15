@@ -11,7 +11,7 @@ public class Car extends Vehicle {
 
     @Override
     public double serviceCharge() {
-        return (0.75 * estimatedValue) / ccRating;
+        return 0.75 * (getEstValue() / ccRating);
     }
 
     public double serviceCharge(int otherCharge) {

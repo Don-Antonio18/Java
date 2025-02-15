@@ -8,4 +8,7 @@ public class Truck extends Vehicle {
         this.numberOfWheels = numberOfWheels;
         this.classification = classification;
     }
+
+
+    
 }

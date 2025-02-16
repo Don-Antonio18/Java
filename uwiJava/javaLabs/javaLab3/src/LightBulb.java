@@ -1,3 +1,4 @@
+package Java.uwiJava.javaLabs.javaLab3.src;
 //QUESTION 4. Create class LightBulb
 //! Pass case3 by completing LightBulb
 

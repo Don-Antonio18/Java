@@ -1,3 +1,4 @@
+package Java.uwiJava.javaLabs.javaLab3.src;
 //QUESTION 3. Create class SmartPhone
 //Pass case2 by completing SmartPhone
 class SmartPhone extends InternetThing{

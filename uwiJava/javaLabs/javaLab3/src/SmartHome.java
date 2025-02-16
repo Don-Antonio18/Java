@@ -1,3 +1,4 @@
+package Java.uwiJava.javaLabs.javaLab3.src;
 class SmartHome {
     InternetThing baseAddress, router;
     private final int MAX_THINGS = 252;

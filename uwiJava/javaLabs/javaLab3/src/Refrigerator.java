@@ -1,4 +1,4 @@
-class Refrigerator extends InternetThing {
+package Java.uwiJava.javaLabs.javaLab3.src;class Refrigerator extends InternetThing {
 
     double basePower;
     double powerRating;

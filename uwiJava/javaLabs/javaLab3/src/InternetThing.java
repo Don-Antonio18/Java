@@ -1,3 +1,5 @@
+package Java.uwiJava.javaLabs.javaLab3.src;
+
 class InternetThing{
     //! QUESTION 1. Complete this class as described in question 1 (after correcting the compile error)
         private String manufacturer, serialNumber, ipAddress;

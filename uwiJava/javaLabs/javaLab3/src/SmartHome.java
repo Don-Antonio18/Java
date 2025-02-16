@@ -90,17 +90,15 @@ class SmartHome {
 
     public void showAllPower()
     {
-        //Question 6
-        //Pass case 5 by completing showAllPower()
-     
-        System.out.println("===============SHOWING ALL POWER===============");
+        //!.Question 6 Pass case 5 by completing showAllPower()
 
+        System.out.println("===============SHOWING ALL POWER===============");
+        
         int sumPower =0;
-        int i=0;
-        for(i=0; i<InternetThing.getNumThings();i++)//replace with appropriate code
+        for(int i=0; i<InternetThing.getNumThings();i++)//replace with appropriate code
           {  
-            int powerVal=0;//replace with code to extract power use of the internet thing
-            // update sumPower
+            int powerVal= things[i].getPowerUse();//replace with code to extract power use of the internet thing
+            sumPower += powerVal;
             System.out.println(powerVal+"\t"+things[i].toString());
         }
         System.out.println("TOTAL POWER = "+sumPower+"mW");

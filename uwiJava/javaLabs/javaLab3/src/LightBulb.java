@@ -4,6 +4,7 @@
 class LightBulb extends InternetThing{
     int lumenCount;
     boolean lightOn;
+
     public void turnOn(){
          lightOn = true;
          System.out.println ("Turned on "+ this);
@@ -15,6 +16,7 @@ class LightBulb extends InternetThing{
     
     public LightBulb(String manufacturer, String serialNumber, int lumenCount){
         super(manufacturer, serialNumber);
+        this.lumenCount = lumenCount;
         this.lightOn =  false; //! --> set lights on to false 
         System.out.println("Created " + this);
      }

@@ -1,15 +1,13 @@
 package TipsAndTricks.src;
 // This is a simple Java program.
-// FileName : "HelloWorld.java".
 
-import TipsAndTricks.OtherClass;
+// FileName : "HelloWorld.java".
 
 public class stringMethods {
     // Your program begins with a call to main().
     // Prints "Hello, World" to the terminal window.
-    public static void main(String args[])
-    {
-        
+    public static void main(String args[]) {
+
         OtherClass.printMessage();
         stringMethods.printStringLength();
     }
@@ -18,4 +16,4 @@ public class stringMethods {
         String txt = "Antonio";
         System.out.println("Length of sentence: " + txt.length());
     }
-}   
+}

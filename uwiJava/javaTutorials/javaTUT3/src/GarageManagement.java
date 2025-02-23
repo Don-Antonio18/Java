@@ -12,8 +12,8 @@ public class GarageManagement {
         // Calculate and print service charges
         System.out.println("Service Charges for all vehicles:");
         for (Vehicle vehicle : garage) {
-            System.out.printf("%s's %s %s: $%.2f%n", 
-                vehicle.owner, vehicle.make, vehicle.model, vehicle.serviceCharge());
+            System.out.printf("%s's %s %s: $%.2f%n",
+                    vehicle.owner, vehicle.make, vehicle.model, vehicle.serviceCharge());
         }
 
         // Calculate service charges with delivery for cars only
@@ -21,16 +21,15 @@ public class GarageManagement {
         for (Vehicle vehicle : garage) {
             if (vehicle instanceof Car) {
                 Car car = (Car) vehicle;
-                System.out.printf("%s's %s %s: $%.2f%n", 
-                    car.owner, car.make, car.model, car.serviceCharge(5000));
+                System.out.printf("%s's %s %s: $%.2f%n",
+                        car.owner, car.make, car.model, car.serviceCharge(5000));
             }
         }
 
-        for (int i=0; i < garage.length; i++) {
+        for (int i = 0; i < garage.length; i++) {
             if (garage[i] instanceof Car) {
                 System.out.println(garage[i].serviceCharge(5000));
-            }
-            else{
+            } else {
                 System.out.println(garage[i].serviceCharge());
             }
 

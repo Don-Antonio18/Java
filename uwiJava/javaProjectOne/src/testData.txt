@@ -1,0 +1,35 @@
+1
+3 2 20
+8 2000 3000 1000 500
+31
+John:Patrick City
+Harry:Maverly:DogArt
+Jana:Maverly
+Timmy:Maverly
+Cathy:Maverly
+Roma:Maverly
+Dennis:Maverly
+Brianna:Maverly
+John:Patrick City
+Harry:HillTop:HeadSkill
+Jana:HillTop:FootSkill
+Timmy:HillTop
+Cathy:HillTop
+Roma:HillTop
+Dennis:HillTop
+Brianna:HillTop
+Marvin:HillTop:HanSkill
+Alia:HillTop:ToeSkill
+Diedre:HillTop:FootRobber
+Marvin:HillSide:ShoeRobber
+Alia:HillSide:CatArt
+Diedre:HillSide
+Timmy:HillSide
+Cathy:HillSide
+Roma:HillSide
+Dennis:HillSide
+Brianna:HillSide
+Harry:Farside:MonkeyArt
+Jana:Farside
+Timmy:Farside
+Cathy:Farside

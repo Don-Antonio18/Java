@@ -10,5 +10,5 @@ public class ArrayTutorial {
             System.out.print(item + " ");
             }
         
-}
+    }
 }

@@ -3,6 +3,10 @@ public class Services {
     private int numSoldiers;
     private int numEquipment;
     private int numPolice;
+    //PART 2(1-2)
+    private int numSocialWorkers;
+    private int numSupplyKits;
+
 
     private static Services theService;
 
@@ -36,6 +40,12 @@ public class Services {
                 (numEquipment >= req));
     }
 
+    //PART 2(3)
+    public boolean socialAvailable(int deploymentSize) {
+        return (numSocialWorkers > deploymentSize) && (numSupplyKits > deploymentSize);
+    }
+
+
     public void deployPolice(int numNeeded) {
         numPolice -= numNeeded;
     }
@@ -44,6 +54,13 @@ public class Services {
         numPolice -= 1;
         numSoldiers -= numNeeded;
         numEquipment -= numNeeded;
+    }
+
+    // PART 2(4)
+    public void deploySocial(int deploymentSize) {
+        numSocialWorkers -= deploymentSize;
+        numSupplyKits -= deploymentSize;
+        numPolice --;
     }
 
 }

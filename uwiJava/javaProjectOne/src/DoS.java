@@ -93,7 +93,7 @@ public class DoS {
 
     
     // PART 5(2)
-    
+
     public void publicPolicyReport() {
         // Data for release to politicians.
         System.out.println("=================SUMMARY FOR POLICY MAKERS=============================");
@@ -108,12 +108,14 @@ public class DoS {
 
         }
         String str = "We expect " + totOps + " operation(s), yielding " + totArrests + " arrest(s)";
-        if (totRehabs > 0)
+
+        if (totRehabs > 0) {
             str += " and " + totRehabs + " rehab(s)";
+        }
+           
         str += ".";
         System.out.println(str);
         System.out.println("");
-
     }
 
     public void classifiedInformationBrief() {

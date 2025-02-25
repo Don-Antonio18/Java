@@ -40,22 +40,18 @@ public class SOE extends ZOSO {
 
     //PART 4(5)
     public String toString() {
-        if (rehabNum < 1) 
-        {
-            String str = "Operation " + super.getCallSign() + "to be deployed as a SOE in " +
-        cm.getName() + ".\nExpect " + countArrests() + "arrest(s) and " + 
-        countRehabs() + "rehabilitations(s).";
-        return str;
-        } 
-        else 
-        {
-            String str = "Operation " + super.getCallSign() + "to be deployed as a SOE in " +
-        cm.getName() + ".\nExpect " + countArrests() + "arrest(s).";
-        return str;
+
+        // IF NO REHABILITATIONS
+        String str = "Operation " + super.getCallSign() + "to be deployed as a SOE in " +
+        cm.getName() + ".\nExpect " + countArrests() + "arrest(s)";
+
+        // IF THERE ARE REHABILITATIONS
+        if (rehabNum > 0) {
+            str += " and " + countRehabs() + "rehabilitations(s)";
         }
 
-        
-        
+        str += ".";
+        return str;
     }
 
 }

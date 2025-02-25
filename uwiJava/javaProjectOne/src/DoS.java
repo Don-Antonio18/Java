@@ -57,14 +57,32 @@ public class DoS {
         for (Community cm : communities)
         // cm.assessForOp();
         {
+            // PART 5(1)
             int numCriminals = cm.countCriminals();
             if (numCriminals > 0) {
+                // WHEN CRIMINALS LESS THAN GANG LIMIT
                 if (numCriminals < gangLimit) {
                     if (Raid.canDeploy(numCriminals * forceMultiplier))
                         ops.add(new Raid(cm));
                     else if (UnderCover.canDeploy())
                         ops.add(new UnderCover(cm));
 
+                } else {
+                    // WHEN CRIMINALS < 30% OF Residents
+                    if (numCriminals < (cm.countResidents() * emergencyRatio)) {
+
+                        // IF RESOURCES TO IMPLEMENT ZOSO EXIST
+                        if (ZOSO.canDeploy(numCriminals * forceMultiplier)) {
+                            // DEPLOY ZOSO
+                            ops.add(new ZOSO(cm, forceMultiplier));
+
+                            // IF RECOURSES TO IMPLEMENT ZOSO DO NOT EXIST
+                            // check if undercover op can be deployed
+                        } else if (UnderCover.canDeploy()) {
+                            ops.add(new UnderCover(cm));
+                        }
+                        // code does nothing
+                    }
                 }
 
             }
@@ -73,6 +91,9 @@ public class DoS {
 
     }
 
+    
+    // PART 5(2)
+    
     public void publicPolicyReport() {
         // Data for release to politicians.
         System.out.println("=================SUMMARY FOR POLICY MAKERS=============================");

@@ -3,5 +3,9 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
-    ]
+    ],
+    "editor.tabCompletion": "on",
+    "github.copilot.chat.edits.codesearch.enabled": true,
+    "github.copilot.chat.editor.temporalContext.enabled": true,
+    "errorLens.onSaveUpdateOnActiveEditorChange": false
 }

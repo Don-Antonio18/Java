@@ -4,9 +4,6 @@ public class ZOSO extends Operation{
     private int numArrests; // PART 3(1)
 
 
-
-
-
     // PART 3 (2)
     public static boolean canDeploy(int deploymentSize) {
         Services service = Services.getService();

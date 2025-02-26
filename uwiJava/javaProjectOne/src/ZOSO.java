@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class ZOSO extends Operation{
-    private int numArrests; // PART 3(1)
+    private int numOfArrests; // PART 3(1)
 
 
     // PART 3 (2)
@@ -20,13 +20,12 @@ public class ZOSO extends Operation{
             service.deployPolice(requiredSoldiers);
 
             // SET # OF ARRESTS TO MATCH # OF CRIMINALS
-            ArrayList<Criminal> criminals = community.getCriminals();
-            this.numArrests = criminals.size();
+            this.numOfArrests = community.countCriminals();
         }
 
     // PART 3(4)
     public int countArrests() {
-        return numArrests;
+        return numOfArrests;
     }
     
     // PART 3(5)

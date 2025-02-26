@@ -63,35 +63,31 @@ public class DoS {
                 // WHEN CRIMINALS LESS THAN GANG LIMIT
                 if (numCriminals < gangLimit) {
                     if (Raid.canDeploy(numCriminals * forceMultiplier))
-                        ops.add(new Raid(cm));
+                        ops.add(new Raid(cm, forceMultiplier));
                     else if (UnderCover.canDeploy())
                         ops.add(new UnderCover(cm));
-
-                } else {
-                    // WHEN CRIMINALS < 30% OF Residents
-                    if (numCriminals < (cm.countResidents() * emergencyRatio)) {
-
-                        // IF RESOURCES TO IMPLEMENT ZOSO EXIST
+                    } else if ((emergencyRatio * cm.countResidents()) > numCriminals) {
                         if (ZOSO.canDeploy(numCriminals * forceMultiplier)) {
-                            // DEPLOY ZOSO
                             ops.add(new ZOSO(cm, forceMultiplier));
-
-                            // IF RECOURSES TO IMPLEMENT ZOSO DO NOT EXIST
-                            // check if undercover op can be deployed
                         } else if (UnderCover.canDeploy()) {
                             ops.add(new UnderCover(cm));
                         }
-                        // code does nothing
+                        else if ((emergencyRatio * cm.countResidents()) <= numCriminals) {
+                            if (SOE.canDeploy(numCriminals * forceMultiplier)) {
+                                ops.add(new SOE(cm,forceMultiplier, rehabRate));
+                            } else if(UnderCover.canDeploy()) {
+                                ops.add(new UnderCover(cm));
+                            }
+                        }
+
+
+                        }
                     }
                 }
 
             }
 
-        }
 
-    }
-
-    
     // PART 5(2)
 
     public void publicPolicyReport() {
@@ -112,7 +108,7 @@ public class DoS {
         if (totRehabs > 0) {
             str += " and " + totRehabs + " rehab(s)";
         }
-           
+
         str += ".";
         System.out.println(str);
         System.out.println("");

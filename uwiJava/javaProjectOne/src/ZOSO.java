@@ -17,10 +17,16 @@ public class ZOSO extends Operation{
 
             // DEPLOY REQUIRED SOLDIERS
             int requiredSoldiers = community.countCriminals() * multipler;
-            service.deployPolice(requiredSoldiers);
+            service.deploySoldiers(requiredSoldiers);
+            service.deployPolice(1);
 
             // SET # OF ARRESTS TO MATCH # OF CRIMINALS
             this.numOfArrests = community.countCriminals();
+
+            // ARREST ALL CRIMINALS
+            for (Criminal criminal: community.getCriminals()) {
+                criminal.arrest();
+            }
         }
 
     // PART 3(4)
@@ -30,7 +36,7 @@ public class ZOSO extends Operation{
     
     // PART 3(5)
     public String toString() {
-        String str = "Operation " + super.getCallSign() + " to be deployed as a ZOSO in " + cm.getName() +
+        String str = "Operation " + getCallSign() + " to be deployed as a ZOSO in " + cm.getName() +
                 ".\nExpect " + countArrests() + " arrest(s).";
 
         return str;

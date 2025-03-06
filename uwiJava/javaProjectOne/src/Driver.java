@@ -1,3 +1,5 @@
+
+
 import java.io.*;
 
 public class Driver {
@@ -8,7 +10,8 @@ public class Driver {
         // BufferedReader bufferedReader = new
         // BufferedReader(InputStreamReader(System.in));
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/antoniokerr/antJava/Java/uwiJava/javaProjectOne/src/testData.txt"));
+            BufferedReader bufferedReader = new BufferedReader(
+                    new FileReader("/Users/antoniokerr/antJava/Java/uwiJava/javaProjectOne/src/testData.txt"));
             int t = Integer.parseInt(bufferedReader.readLine().trim());
             for (int test = 0; test < t; test++) {
 

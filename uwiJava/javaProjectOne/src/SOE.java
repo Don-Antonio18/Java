@@ -2,33 +2,35 @@ import java.util.ArrayList;
 
 public class SOE extends ZOSO {
     private int rehabNum; // PART 4(1)
+    private int numSocial;
+    private int numSupplies;
 
 
     // PART 4(2) - renamed to avoid shadowing
     public static boolean canDeploy(int deploymentSize) {
         Services service = Services.getService();
-        if (service.soldiersAvailable(deploymentSize) &&
+
+        return (service.soldiersAvailable(deploymentSize) &&
         service.socialAvailable(deploymentSize) &&
-            service.policeAvailable(2)) {
-                return true;
-        } else {
-            return false;
-        }
+            service.policeAvailable(2)) ;
+    }
+        
            
 
-    }
 
          // PART 4(3)
     public SOE(Community community, int multiplier, int rehabRate) {
             super(community, multiplier);
 
-            // get deployment service for social worker workers
             Services service = Services.getService();
-            service.deploySocial(multiplier * community.countCriminals());
+            int deploySize = community.countCriminals() * multiplier;
+            service.deploySocial(deploySize);
+            numSocial += deploySize;
+            numSupplies += deploySize;
             service.deployPolice(1);
 
             // get rehabilitations
-            this.rehabNum = (community.countCriminals() * rehabRate) / 100;
+            rehabNum = (community.countCriminals() * rehabRate) / 100;
 
             ArrayList<Criminal> criminals = community.getCriminals();
             for (int i = 0; i < rehabNum && i < criminals.size(); i++) {
@@ -39,7 +41,7 @@ public class SOE extends ZOSO {
                 // rehabilitate criminal
                 criminal.rehabilitate();
                 // remove criminal
-                criminals.remove(criminal);
+                community.getCriminals().remove(criminal);
             }
     }
     
@@ -59,7 +61,7 @@ public class SOE extends ZOSO {
         String str = "Operation " + super.getCallSign() + " to be deployed as a SOE in " + cm.getName() + ".\nExpect " + countArrests() + " arrest(s)";
 
         if (rehabNum > 0) {
-            str += " and " + countRehabs() + " rehabilitation(s)";
+            str += " and " + rehabNum + " rehabilitation(s)";
         }
         
         str += ".";

@@ -4,17 +4,18 @@ public class Services {
     private int numEquipment;
     private int numPolice;
     //PART 2(1-2)
-    private int numSocialWorkers;
     private int numSupplyKits;
+    private int numSocial;
 
 
     private static Services theService;
 
-    private Services(int numSoldiers, int numEquipment, int numPolice,
-            int numSocial, int numSupplies) {
+    private Services(int numSoldiers, int numEquipment, int numPolice, int numSocial, int numSupplies) {
         this.numSoldiers = numSoldiers;
         this.numEquipment = numEquipment;
         this.numPolice = numPolice;
+        this.numSocial = numSocial;
+
 
     }
 
@@ -31,8 +32,14 @@ public class Services {
         return theService;
     }
 
+
+    //PART 2(3)
+    public boolean socialAvailable(int deploymentSize) {
+        return ((numSocial >= deploymentSize) && (numSupplyKits >= deploymentSize));
+    }
+
     public boolean policeAvailable(int req) {
-        return numPolice >= req;
+        return numPolice > req; // change to >
     }
 
     public boolean soldiersAvailable(int req) {
@@ -40,10 +47,6 @@ public class Services {
                 (numEquipment >= req));
     }
 
-    //PART 2(3)
-    public boolean socialAvailable(int deploymentSize) {
-        return (numSocialWorkers > deploymentSize) && (numSupplyKits > deploymentSize);
-    }
 
 
     public void deployPolice(int numNeeded) {
@@ -57,10 +60,11 @@ public class Services {
     }
 
     // PART 2(4)
-    public void deploySocial(int deploymentSize) {
-        numSocialWorkers -= deploymentSize;
-        numSupplyKits -= deploymentSize;
-        numPolice --;
+    public void deploySocial(int numNeeded) {
+        deployPolice(1);
+        numSocial -= numNeeded;
+        numSupplyKits -= numNeeded;
+        
     }
 
 }

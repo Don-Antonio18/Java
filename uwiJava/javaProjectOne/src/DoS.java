@@ -59,35 +59,29 @@ public class DoS {
         for (Community cm : communities) {
             int numCriminals = cm.countCriminals();
             int numResidents = cm.countResidents();
-            
+            int deploySize = numCriminals * forceMultiplier;
+
             if (numCriminals > 0) {
-                int deploySize = numCriminals * forceMultiplier;
-                
                 // if below gang limit
                 if (numCriminals < gangLimit) {
                     if (Raid.canDeploy(deploySize)) {
                         ops.add(new Raid(cm, forceMultiplier));
                     } else if (UnderCover.canDeploy()) {
                         ops.add(new UnderCover(cm));
-                    }
-                }
-                // criminals less than emergency ratio
-                else if (numCriminals < emergencyRatio) {
-                    // test if can deploy SOE
-                    if (ZOSO.canDeploy(deploySize)) {
-                        ops.add(new ZOSO(cm, forceMultiplier));
-                    } else if (UnderCover.canDeploy()) {
-                        ops.add(new UnderCover(cm));
-                    }
-                }
+                    } else if ((emergencyRatio * numResidents) > numCriminals){
+                        if (ZOSO.canDeploy(deploySize)) {
+                            ops.add(new ZOSO(cm, forceMultiplier));
+                        } else if (UnderCover.canDeploy()) {
+                            ops.add(new UnderCover(cm));
+                        }
 
-                // if above gang limit
-                else if (numCriminals >= (emergencyRatio * numResidents)) {
-                    // test if can implement SOE
-                    if (SOE.canDeploy(deploySize)) {
-                        ops.add(new SOE(cm, forceMultiplier, rehabRate));
-                    } else if (UnderCover.canDeploy()) {
-                        ops.add(new UnderCover(cm));
+                    } else if ((emergencyRatio * numResidents) <= numCriminals){
+                        if (SOE.canDeploy(deploySize)){
+                            ops.add(new SOE(cm, forceMultiplier, rehabRate));
+                        }
+                        else if (UnderCover.canDeploy()) {
+                            ops.add(new UnderCover(cm));
+                        }  
                     }
                 }
             }
@@ -104,19 +98,15 @@ public class DoS {
         int totArrests = 0;
         int totRehabs = 0;
         for (Operation op : ops) {
-            
             if (op instanceof Raid) {
                 totArrests += ((Raid) op).countArrests();
                 totOps++;
             } else if (op instanceof SOE) {
-                totArrests += ((SOE) op).countArrests();
                 totRehabs += ((SOE) op).countRehabs();
-                totOps++;
             } else if (op instanceof ZOSO && !(op instanceof SOE)) {
                 totArrests += ((ZOSO) op).countArrests();
                 totOps++;
             }
-
         }
         String str = "We expect " + totOps + " operation(s), yielding " + totArrests + " arrest(s)";
 
@@ -132,19 +122,12 @@ public class DoS {
     public void classifiedInformationBrief() {
         System.out.println("=================CLASSIFIED INTERNAL OPERATION BRIEF=============================");
         // Security Officers Internal Brief
-        for (int i = 0; i < ops.size(); i++) {
+        for (int i = 0; i < ops.size(); i++) 
+        {
             Operation op = ops.get(i);
-            if (op instanceof Raid){
-                System.out.println((Raid) op);
-            } else if (op instanceof SOE){
-                System.out.println((SOE) op);
-            } else if (op instanceof ZOSO && !(op instanceof SOE)){
-                System.out.println((ZOSO) op);
-            } else if (op instanceof UnderCover) {
-                System.out.println((UnderCover) op);
-            }
-                
+            System.out.println(op.toString());
 
+            
         }
     }
 

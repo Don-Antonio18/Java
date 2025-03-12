@@ -1,0 +1,10 @@
+Kin_Pupalik	1	0	95	Drive_Fast
+Fast_X_Furious	2	0	90	Crash_A_Lot
+4	John Silver	72	false
+6	Ginger Garden	27	true
+0	Sprat, Jack		[Drive_Fast,, No_AC]
+3	Hill, Jill		[Crash_A_Lot]
+7	Contrary, Mary		[Crash_A_Lot]
+2	Beard, Black		Fast_X_Furious
+1*	River, Angel		Fast_X_Furious
+5*	Tom, Jerry		Kin_Pupalik

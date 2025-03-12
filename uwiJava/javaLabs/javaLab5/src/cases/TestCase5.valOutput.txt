@@ -1,0 +1,11 @@
+Kin_Pupalik	1	0	95	Drive_Fast
+Fast_X_Furious	2	0	90	Crash_A_Lot
+Go_Easy	20	15	85	
+2	Beard, Black		Fast_X_Furious
+7	Contrary, Mary		Go_Easy
+6*	Garden, Ginger		Go_Easy
+3*	Hill, Jill		Go_Easy
+1*	River, Angel		Fast_X_Furious
+4	Silver, John		Go_Easy
+0*	Sprat, Jack		Go_Easy
+5*	Tom, Jerry		Kin_Pupalik

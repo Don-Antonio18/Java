@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Community {
-    private int GPSx, GPSy; // not relevant to this project - just here to show possibilities
     private String name;
     private ArrayList<Resident> residents;
     private ArrayList<Criminal> criminals;

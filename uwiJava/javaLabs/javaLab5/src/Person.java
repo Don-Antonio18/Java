@@ -37,9 +37,7 @@ public class Person extends BasePerson implements Comparable<Person>
         return returnval;
     }
 
-    /**
-     * @return String representation of person for display
-     */
+    @Override
     public String toString()
     {
         return(getId()+"\t"+getName()+"\t"+getAge()+"\t"+getPublish());

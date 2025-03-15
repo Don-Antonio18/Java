@@ -24,35 +24,38 @@ public class TestCase
         return caseNo;
 
     }
-
+    
     public String getPersonInFile()
     {
-        return "TestCase"+caseNo+".persons.txt";
+        return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo+".persons.txt"; //edited to add basepath
 
     }
 
     public String getApprovalInFile()
     {
-        return "TestCase"+caseNo+".approved.txt";
+        return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo+".approved.txt";
 
     }
 
     public String getVBatchInFile()
     {
-        return "TestCase"+caseNo+".batches.txt";
+        return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo+".batches.txt";
 
     }
 
     public String getTestOutFile()
     {
-        return "./cases/TestCase"+caseNo+".myOutput.txt";
-
+        //return "./cases/TestCase"+caseNo+".myOutput.txt";
+        return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase"+caseNo+".myOutput.txt";
+        
     }
 
     public double score()
     {
-        String testfile = "./cases/TestCase"+caseNo+".myOutput.txt";
-        String valfile = "./cases/TestCase"+caseNo+".valOutput.txt";
+        //String testfile = ".src/cases/TestCase"+caseNo+".myOutput.txt";
+        //String valfile = ".src/cases/TestCase"+caseNo+".valOutput.txt";
+        String testfile = "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo+".valOutput.txt";
+        String valfile = "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo+".valOutput.txt";
         String tString="", vString=""; 
         try{
             Scanner tscan = new Scanner(new File(testfile));

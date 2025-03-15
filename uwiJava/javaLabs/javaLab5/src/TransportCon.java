@@ -64,7 +64,7 @@ public class TransportCon implements Comparable<TransportCon>{
      return returnval;
      
     }
- 
+    //! 4(b)
     public String testString()
     {
          return(getName()+"\t"+getSize()+"\t"+getPreference()+"\t"+getDisclaims());

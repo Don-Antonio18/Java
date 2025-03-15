@@ -47,17 +47,17 @@ public class ApprovedPerson extends BasePerson implements Comparable<ApprovedPer
         return ap.getAge() - this.getAge() ;
     }
 
-    /**
-     * @return Name formatted as "LastName, FirstName"
-     */
+
+    //! 3(c): Override getName to return lastname, firstname
+    @Override
     public String getName()
     {
         String returnval =  "";
-        String[] nameparts = name.split(" ");
+        String[] nameparts = name.split(" "); // splits string
         if (nameparts.length ==1)
-            returnval = nameparts[0];
+            returnval = nameparts[0];               // returns name
         if (nameparts.length ==2)
-            returnval = nameparts[1]+", "+nameparts[0];    
+            returnval = nameparts[1]+", "+nameparts[0];    // returns lastname + firstname
 
         return returnval;
     }
@@ -80,9 +80,9 @@ public class ApprovedPerson extends BasePerson implements Comparable<ApprovedPer
         return returnval;
     }
 
-    /**
-     * @return String representation of approved person
-     */
+ 
+    //! 3(d)
+    @Override
     public String toString()
     {
         return(getId()+"\t"+getName()+"\t\t"+getSafeReqs());

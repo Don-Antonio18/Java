@@ -12,11 +12,15 @@ public class FullyContractedPerson extends BasePerson implements Comparable<Full
     {
         return operatorName;
     }
-
+    //! 6 publish method
     public String publish()
-    {
-        String returnval ="";
-        return returnval;
+    {   
+        if (getPublish()  == true) {
+            String returnval ="<p>"+getName() + " travels with " + operatorName + "!!!</p>";
+            return returnval;
+        } else {
+            return "";
+        }
 
     }
 
@@ -46,6 +50,9 @@ public class FullyContractedPerson extends BasePerson implements Comparable<Full
        return   this.getName().compareTo(other.getName()); 
     }
       
-
-
+    //! 5(a)
+    @Override
+    public String toString() {
+        return getId()+(getPublish()?"*":"")+"\t"+getName()+"\t\t"+getOperatorName();
+    }
 }

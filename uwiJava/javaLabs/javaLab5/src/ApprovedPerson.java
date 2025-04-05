@@ -8,7 +8,7 @@ public class ApprovedPerson extends BasePerson implements Comparable<ApprovedPer
     ArrayList<String> safeReqs;     // List of safety requirements
     
     /**
-     * Creates an approved person with specified attributes
+     * Creates an approved person with specified– attributes
      * @param age Person's age
      * @param name Person's full name
      * @param publish Consent to publish

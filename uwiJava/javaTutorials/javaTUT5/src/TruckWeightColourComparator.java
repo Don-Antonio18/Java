@@ -7,7 +7,7 @@ public class TruckWeightColourComparator implements Comparator<Truck> {
     //! compare is abstract method of comparator
     public int compare(Truck truck1, Truck truck2) {
 
-        if (truck1.getMaxLadenWeight() -  truck2.getMaxLadenWeight())  0)
+        if (truck1.getMaxLadenWeight() -  truck2.getMaxLadenWeight())  )
 
 
         // First compare by max laden weight

@@ -1,3 +1,4 @@
+package src;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -41,6 +42,15 @@ public class PersonListing extends JPanel {
 
         pnlCommand = new JPanel();
         pnlDisplay = new JPanel();
+        
+        //custom colours
+        Color backgroundColour = Color.LIGHT_GRAY;
+        Color foregroundColour = Color.BLACK;
+        Color buttonBackgroundColour = new Color(0, 255, 255); // Cyan
+        Color buttonForegroundColour = Color.BLACK;
+        
+        pnlCommand.setBackground(backgroundColour);
+        pnlDisplay.setBackground(backgroundColour);
 
         plist= loadPersons("person.dat");
         String[] columnNames=  {"First Name",

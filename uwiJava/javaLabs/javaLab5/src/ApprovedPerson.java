@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import src.BasePerson;
+
 /**
  * Represents an approved person with additional safety requirements.
  * Extends BasePerson and implements sorting by age.

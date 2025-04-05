@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
+import src.BasePerson;
+import src.Person;
+
 public class TCProgram {
     private ArrayList<Person> plist = new ArrayList<Person>();
     private ArrayList<ApprovedPerson> aplist = new ArrayList<ApprovedPerson>();

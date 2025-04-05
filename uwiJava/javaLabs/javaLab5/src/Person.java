@@ -1,3 +1,6 @@
+import src.BasePerson;
+import src.Person;
+
 /**
  * Concrete implementation of BasePerson representing a basic person in the system.
  * Implements Comparable to allow sorting based on ID.

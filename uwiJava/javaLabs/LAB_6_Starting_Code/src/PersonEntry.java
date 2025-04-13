@@ -53,7 +53,6 @@ public class PersonEntry extends JFrame
         pnlCommand.setBackground(backgroundColour);
         
         
-        
         pnlDisplay.add(new JLabel("Name:"));
         txtName = new JTextField(20);
         pnlDisplay.add(txtName);

@@ -1,5 +1,4 @@
-import BasePerson;
-import Person;
+import BasePerson
 
 package src;
 public class Person extends BasePerson implements Comparable<Person>

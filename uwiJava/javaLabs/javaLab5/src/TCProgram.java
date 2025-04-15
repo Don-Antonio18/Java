@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-import src.BasePerson;
-import src.Person;
+//import src.BasePerson;
+//import src.Person;
 
 public class TCProgram {
     private ArrayList<Person> plist = new ArrayList<Person>();
@@ -198,20 +198,20 @@ public class TCProgram {
     }
 
     public String getPersonInFile(int caseNo) {
-        //return "./cases/TestCase" + caseNo + ".persons.txt";
-        return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo + ".approved.txt";
+        return "./cases/TestCase" + caseNo + ".persons.txt";
+        //return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo + ".approved.txt";
 
     }
 
     public String getApprovalInFile(int caseNo) {
-        //return "./cases/TestCase" + caseNo + ".approved.txt";
-        return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo + ".approved.txt";
+        return "./cases/TestCase" + caseNo + ".approved.txt";
+       //return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo + ".approved.txt";
 
     }
 
     public String getTBatchInFile(int caseNo) {
-        //return "./cases/TestCase" + caseNo + ".batches.txt";
-        return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo + ".approved.txt";
+        return "./cases/TestCase" + caseNo + ".batches.txt";
+       // return "/Users/antoniokerr/antJava/Java/uwiJava/javaLabs/javaLab5/src/TestCase" + caseNo + ".approved.txt";
 
         
     }

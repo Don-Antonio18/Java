@@ -1,7 +1,8 @@
-import javax.swing.*;
-
-
-public class Driver {
+/**
+ * Main entry point for the application.
+ * Initializes and launches the main menu interface.
+ */
+public class MainDriver {
     public static void main(String[] args) {
         
         //Schedule a job for the event-dispatching thread:
@@ -15,4 +16,3 @@ public class Driver {
     }
     
 }
-

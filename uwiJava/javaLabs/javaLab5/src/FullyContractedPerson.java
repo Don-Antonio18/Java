@@ -1,4 +1,4 @@
-import src.BasePerson;
+//import src.BasePerson;
 
 public class FullyContractedPerson extends BasePerson implements Comparable<FullyContractedPerson>{
     private String operatorName;

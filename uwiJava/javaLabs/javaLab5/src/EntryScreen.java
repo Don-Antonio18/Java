@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import src.BasePerson;
-import src.Person;
+//import src.BasePerson;
+//import src.Person;
 /**
 *
 * @author PGaynor

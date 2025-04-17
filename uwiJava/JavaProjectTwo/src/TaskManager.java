@@ -14,7 +14,6 @@ import java.awt.Color;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.*;
@@ -40,6 +39,8 @@ public class TaskManager extends JPanel{
     private JButton     cmdEditTask;
     private JButton     cmdDeleteTask;
     private JButton     cmdMarkComplete;
+    private JButton     cmdSortByDueDate;
+    private JButton     cmdSortByCategory;
     private JButton     cmdClose;
     private JButton     cmdSortByUrgency;
     
@@ -84,12 +85,21 @@ public class TaskManager extends JPanel{
         
         cmdAddTask  = new JButton("Add Task");
         cmdEditTask = new JButton("Edit Task");
+        cmdSortByDueDate  = new JButton("Sort By Due Date");
+        cmdSortByCategory = new JButton("Sort By Category");
         cmdDeleteTask = new JButton("Delete Task");
+        cmdSortByDueDate = new JButton("Sort by Due Date");
+        pnlCommand.add(cmdSortByDueDate);
+        //cmdSortByDueDate.addActionListener(new SortByDateListener());
+        
+        
         cmdClose  = new JButton("Back to Main Menu");
         
         cmdAddTask.addActionListener(new AddButtonListener());
         cmdClose.addActionListener(new CloseButtonListener());
         cmdEditTask.addActionListener(new EditButtonListener());
+        cmdSortByDueDate.addActionListener(new SortByDueDateListener());
+        cmdSortByCategory.addActionListener(new SortByCategoryListener());
         cmdDeleteTask.addActionListener(new DeleteButtonListener());
         table.addMouseListener(new TaskOptionsListener());
         
@@ -102,9 +112,37 @@ public class TaskManager extends JPanel{
         
     }
     
+    //? ----------- IMPLEMENTATION OF TASK SORTING  ----------------
+    
+    private class DueDateComparator implements Comparator<Task>{
+        @Override
+        public int compare(Task task1, Task task2) {
+            return task1.getdueDate().compareTo(task2.getdueDate());
+        }
+    }
+    
+    private void sortByDueDate(){
+        Collections.sort(tasklist, new DueDateComparator());
+        refreshTable();
+    }
+    
+    
+    private class sortByCategoryComparator implements Comparator<Task> {
+        @Override
+        public int compare(Task task1, Task task2) {
+            return task1.getType().compareTo(task2.getType());
+        }
+    }
+    
+    private void sortByCategory(){
+        Collections.sort(tasklist, new sortByCategoryComparator());
+        refreshTable();
+    }
+    
     public void addTask (Task t){
         tasklist.add(t);
     }
+    
     
     //loads all saved Tasks from a file
     private ArrayList<Task> loadTasks(String tfile) {
@@ -311,6 +349,21 @@ public class TaskManager extends JPanel{
         }
     }
     
+    private class SortByDueDateListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            sortByDueDate();
+        }
+    }
+    
+    private class SortByCategoryListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            sortByCategory();
+        }
+        
+    }
+   
     private class DeleteButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             int selectedRow = table.getSelectedRow();
@@ -344,7 +397,10 @@ public class TaskManager extends JPanel{
         }
     }
     
-    private class CloseButtonListener implements ActionListener
+        
+        
+        
+        private class CloseButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
@@ -352,4 +408,7 @@ public class TaskManager extends JPanel{
             thisManager.setVisible(false);
         }
     }
+    
+   
+    
 }

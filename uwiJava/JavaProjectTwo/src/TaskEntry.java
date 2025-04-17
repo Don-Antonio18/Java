@@ -1,16 +1,12 @@
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.awt.event.ComponentListener;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 
 /**
- * Provides a form interface for creating new tasks.
+ * Provides a dialog window for creating new tasks.
  * Allows users to input task details including title, type, and deadline.
- * Integrates with TaskManager to add new tasks to the system.
  */
 public class TaskEntry extends JFrame{
     public TaskManager taskman;
@@ -29,6 +25,11 @@ public class TaskEntry extends JFrame{
     private JPanel      pnlCommand;
     private JPanel      pnlDisplay;
     
+    /**
+     * Creates a new task entry dialog window.
+     *
+     * @param tm The parent TaskManager instance
+     */
     public TaskEntry(TaskManager tm)
     {
         this.taskman = tm;
@@ -77,6 +78,10 @@ public class TaskEntry extends JFrame{
         
     }
     
+    /**
+     * Listener for the Save button that creates and adds a new task.
+     * Changes button color on mouse hover.
+     */
     private class SaveButtonListener implements MouseListener
     {
         public void mouseClicked(MouseEvent e)// once the button is clicked, the code is executed, similar to action listener but mouse listener gives us more flexibility(as you can see with additional methods)
@@ -109,6 +114,11 @@ public class TaskEntry extends JFrame{
         
     }
     
+    
+    /**
+     * Listener for the Close button that closes the dialog.
+     * Changes button color on mouse hover.
+     */
     private class CloseButtonListener implements MouseListener
     {
         
@@ -138,3 +148,4 @@ public class TaskEntry extends JFrame{
     }
     
 }
+

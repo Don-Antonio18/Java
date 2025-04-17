@@ -1,0 +1,15 @@
+Read Personal 5
+Journal Personal 1
+Call_Mom Personal 2
+Call_Dad Personal 4
+Draw Personal 6
+Jog Health 11
+Arm_Day Health 10
+Leg_Day Health 12
+Back_Day Health 14
+Shoulder_Day Health 16
+Clean_Bathroom Chores 2
+Homework Chores 3
+Test Work 20
+Study Work 15
+Vacation Personal 30

@@ -1,0 +1,10 @@
+How many elements are there|121|1
+What is the capital of France?|Paris|4
+What is the name of the largest ocean|Pacific|5
+Where is Spain Located?|Europe|1
+Where is Jamaica?|Caribbean|1
+Where is Australia?|Oceana|5
+What genus are Humans?|Mammals|3
+How many legs do spiders have?|8|4
+How many senses are there?|5|1
+

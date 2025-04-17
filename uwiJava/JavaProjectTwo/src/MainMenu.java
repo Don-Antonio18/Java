@@ -4,8 +4,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
- * Represents the main menu of the application.
- * Provides navigation to different features like Task Manager and Flash Cards.
+ * Main menu interface for the StudyWise application.
+ * Provides access to Task Manager and Flashcard functionalities.
  */
 public class MainMenu extends JFrame {
 	private JButton     cmdTaskBtn;
@@ -14,11 +14,10 @@ public class MainMenu extends JFrame {
 	private JPanel      pnlCommand;
 	
 	/**
-	 * Creates the main menu window with buttons for different features.
-	 * Sets up the GUI components and initializes button listeners.
-	 */
+     * Creates and initializes the main menu window with navigation buttons.
+     */
 	public MainMenu() {
-		setTitle("Bee Productive - Main Menu");
+		setTitle("StudyWise - Main Menu");
 		setSize(400, 300);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -68,9 +67,9 @@ public class MainMenu extends JFrame {
 	}
 	
 	/**
-	 * Listener for the Task Manager button.
-	 * Opens the task management interface.
-	 */
+     * Listener for the Task Manager button.
+     * Opens the task management interface.
+     */
 	private class TaskButtonListener implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -78,11 +77,11 @@ public class MainMenu extends JFrame {
 			TaskManager.createAndShowGUI();
 		}
 	}
-	
+
 	/**
-	 * Listener for the Flash Cards button.
-	 * Opens the flash card management interface.
-	 */
+     * Listener for the Flashcard button.
+     * Opens the flashcard management interface.
+     */
 	private class FlashCardButtonListener implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -92,9 +91,9 @@ public class MainMenu extends JFrame {
 	}
 	
 	/**
-	 * Listener for the Exit button.
-	 * Closes the application.
-	 */
+     * Listener for the Exit button.
+     * Terminates the application.
+     */
 	private class ExitButtonListener implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -104,9 +103,8 @@ public class MainMenu extends JFrame {
 	}
 	
 	/**
-	 * Creates and displays the main menu GUI.
-	 * Entry point for showing the main menu.
-	 */
+     * Creates and displays the main menu window.
+     */
 	public static void createAndShowGUI() {
 		new MainMenu();
 	}

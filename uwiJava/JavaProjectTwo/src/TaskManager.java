@@ -105,6 +105,8 @@ public class TaskManager extends JPanel{
         
         pnlCommand.add(cmdAddTask);
         pnlCommand.add(cmdEditTask);
+        pnlCommand.add(cmdSortByDueDate);
+        pnlCommand.add(cmdSortByCategory);
         pnlCommand.add(cmdDeleteTask);
         pnlCommand.add(cmdClose);
         
@@ -113,6 +115,8 @@ public class TaskManager extends JPanel{
     }
     
     //? ----------- IMPLEMENTATION OF TASK SORTING  ----------------
+    
+    //! Sorting by Due Date
     
     private class DueDateComparator implements Comparator<Task>{
         @Override
@@ -126,6 +130,8 @@ public class TaskManager extends JPanel{
         refreshTable();
     }
     
+    
+    //! Sorting by Task Type
     
     private class sortByCategoryComparator implements Comparator<Task> {
         @Override
@@ -142,7 +148,6 @@ public class TaskManager extends JPanel{
     public void addTask (Task t){
         tasklist.add(t);
     }
-    
     
     //loads all saved Tasks from a file
     private ArrayList<Task> loadTasks(String tfile) {
